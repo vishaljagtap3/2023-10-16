@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var recyclerMessages : RecyclerView
+    private lateinit var recyclerMessages: RecyclerView
     private lateinit var messagesAdapter: MessagesAdapter
-    private val messages = ArrayList<String>()
+    private val messages = ArrayList<Message>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +28,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initMessages() {
-        for(i in 0..20) {
-            messages.add("$i - Dear student, you are not serious about the course.")
+        for (i in 0..20) {
+            messages.add(
+                Message(
+                    "Sender $i",
+                    "$i - Dear student, you are not serious about the course.",
+                    "2023-11-27",
+                    R.mipmap.ic_launcher
+                )
+            )
         }
     }
 }

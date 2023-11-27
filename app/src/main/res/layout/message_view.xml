@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/imgSender"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        app:layout_constraintBottom_toBottomOf="@id/imgSender"
+        app:layout_constraintTop_toTopOf="@id/imgSender"
+        app:layout_constraintLeft_toRightOf="@id/imgSender"
+        android:id="@+id/txtSender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/imgSender"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/txtBody"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/txtBody"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/txtDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
