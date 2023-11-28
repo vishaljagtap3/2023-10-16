@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
         recyclerMessages.adapter = messagesAdapter
 
         recyclerMessages.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            LinearLayoutManager(
+                this,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
 
     }
 
