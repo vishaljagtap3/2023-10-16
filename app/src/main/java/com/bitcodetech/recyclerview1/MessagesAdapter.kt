@@ -14,6 +14,12 @@ class MessagesAdapter(
     private val messages: ArrayList<Message>
 ) : RecyclerView.Adapter<MessagesAdapter.MessageViewHolder>() {
 
+    interface OnMessageClickListener {
+        fun onMessageClick(position : Int, message : Message, view : View)
+    }
+
+    var onMessageClickListener : OnMessageClickListener? = null
+
     inner class MessageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val imgSender : ImageView
@@ -29,11 +35,20 @@ class MessagesAdapter(
 
             //way 3 //best way to setup listener to view inside a RV
             itemView.setOnClickListener {
-                Toast.makeText(
+
+                if(onMessageClickListener != null) {
+                    onMessageClickListener!!.onMessageClick(
+                        adapterPosition,
+                        messages[adapterPosition],
+                        it
+                    )
+                }
+
+                /*Toast.makeText(
                     it.context,
                     "Message from: ${messages[adapterPosition].sender}",
                     Toast.LENGTH_SHORT
-                ).show()
+                ).show()*/
             }
         }
     }
